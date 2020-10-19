@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#6200EE</color>
+    <color name="colorPrimaryDark">#3700B3</color>
+    <color name="colorAccent">#03DAC5</color>
+
+    <!--Palettenya Tiara-->
+    <color name="pinkOne">#ec007f</color>
+    <color name="pinkTwo">#8a004a</color>
+    <color name="pinkThree">#ff859a</color>
+    <color name="pinkFour">#ffacba</color>
+    <color name="pinkFive">#ffd3db</color>
+    <color name="pinkSix">#ff5f79</color>
+    <color name="myTextLight">#FFFFFF</color>
+</resources>
