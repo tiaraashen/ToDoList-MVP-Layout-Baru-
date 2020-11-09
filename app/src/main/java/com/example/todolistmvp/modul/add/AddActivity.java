@@ -9,7 +9,7 @@ import java.util.ArrayList;
 
 public class AddActivity extends BaseFragmentHolderActivity {
     AddFragment addFragment;
-    private final int UPDATE_REQUEST = 2020;
+    private final int UPDATE_REQUEST = 2019;
 
     @Override
     protected void initializeFragment() {
@@ -22,6 +22,6 @@ public class AddActivity extends BaseFragmentHolderActivity {
         ivIcon.setVisibility(View.VISIBLE);
 
         addFragment = new AddFragment(toDoList);
-        setCurrentFragment(addFragment, true);
+        setCurrentFragment(addFragment, false);
     }
 }

@@ -43,7 +43,7 @@ public class AddFragment extends BaseFragment<AddActivity, AddContract.Presenter
             }
         });
 
-        setTitle("Add Item View");
+        setTitle("Add To Do List");
 
         return fragmentView;
     }
@@ -61,5 +61,6 @@ public class AddFragment extends BaseFragment<AddActivity, AddContract.Presenter
         Intent returnIntent = new Intent(activity, ToDoListActivity.class);
         returnIntent.putStringArrayListExtra("returnData", toDoList);
         startActivity(returnIntent);
+        activity.finish();
     }
 }

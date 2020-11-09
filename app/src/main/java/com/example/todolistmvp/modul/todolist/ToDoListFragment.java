@@ -21,6 +21,7 @@ import androidx.annotation.Nullable;
 import com.example.todolistmvp.R;
 import com.example.todolistmvp.base.BaseFragment;
 import com.example.todolistmvp.modul.add.AddActivity;
+import com.example.todolistmvp.modul.login.LoginActivity;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -29,7 +30,8 @@ public class ToDoListFragment extends BaseFragment<ToDoListActivity, ToDoListCon
     ListView itemListView;
     Button btnAdd;
     Button btnClear;
-    String[] toDoArray = {"Tidur Malem", "Tidur Siang", "Nugas", "Ngebucin"};
+    Button btnLogout;
+    String[] toDoArray = {"Tidur", "Makan", "Rebahan", "Ngebucin"};
     ArrayList<String> toDoArrayList;
     ArrayList<String> returnedList;
     ArrayAdapter adapter;
@@ -49,8 +51,13 @@ public class ToDoListFragment extends BaseFragment<ToDoListActivity, ToDoListCon
         itemListView = fragmentView.findViewById(R.id.itemListView);
         btnAdd = fragmentView.findViewById(R.id.btnAdd);
         btnClear = fragmentView.findViewById(R.id.btnClear);
+        btnLogout = fragmentView.findViewById(R.id.btnLogout);
 
-        toDoArrayList = new ArrayList<>(Arrays.asList(toDoArray));
+        if (returnedList == null)
+            toDoArrayList = new ArrayList<>(Arrays.asList(toDoArray));
+        else
+            toDoArrayList = returnedList;
+
         adapter = new ArrayAdapter<>(activity, android.R.layout.simple_list_item_1, toDoArrayList);
         itemListView.setAdapter(adapter);
 
@@ -83,7 +90,14 @@ public class ToDoListFragment extends BaseFragment<ToDoListActivity, ToDoListCon
             }
         });
 
-        setTitle("ToDoList");
+        btnLogout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                mPresenter.performLogout();
+            }
+        });
+
+        setTitle("To Do List");
 
         return fragmentView;
     }
@@ -109,11 +123,11 @@ public class ToDoListFragment extends BaseFragment<ToDoListActivity, ToDoListCon
     @Override
     public void showEditBox(String uneditedItem, final int index) {
         final Dialog dialog = new Dialog(activity);
-        dialog.setTitle("EDIT DATA");
+        dialog.setTitle("EDIT DIALOG");
         dialog.setContentView(R.layout.dialog_edit);
 
         TextView txtMessage = (TextView) dialog.findViewById(R.id.textMessage);
-        txtMessage.setText("EDIT DATA");
+        txtMessage.setText("EDIT ITEM");
         txtMessage.setTextColor(Color.parseColor("#000000"));
 
         final EditText editText = (EditText) dialog.findViewById(R.id.textInput);
@@ -147,5 +161,12 @@ public class ToDoListFragment extends BaseFragment<ToDoListActivity, ToDoListCon
                     }
                 })
                 .show();
+    }
+
+    @Override
+    public void redirectToLogin() {
+        Intent intent = new Intent(activity, LoginActivity.class);
+        startActivity(intent);
+        activity.finish();
     }
 }

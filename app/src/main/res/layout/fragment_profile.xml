@@ -1,8 +1,10 @@
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:layout_margin="12dp">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -47,7 +49,7 @@
             android:paddingTop="10dip"
             android:textStyle="bold"
             android:text="Password"
-            android:textColor="?attr/colorPrimary" />
+            android:textColor="?attr/colorAccent" />
 
         <TextView
             android:id="@+id/tv_password"
@@ -55,7 +57,7 @@
             android:layout_height="wrap_content"
             android:padding="10dip"
             android:text="Your password"
-            android:textColor="?attr/colorAccent"
+            android:textColor="?attr/colorPrimary"
             android:textSize="18sp" />
 
         <Button
@@ -67,14 +69,7 @@
             android:text="To Do List"
             android:textColor="?attr/textWhiteColor" />
 
-        <Button
-            android:id="@+id/bt_logout"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
-            android:background="?attr/colorButtonNormal"
-            android:text="Log Out"
-            android:textColor="?attr/textWhiteColor" />
+
     </LinearLayout>
 
 </RelativeLayout>

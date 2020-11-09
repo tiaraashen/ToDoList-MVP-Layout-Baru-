@@ -11,10 +11,11 @@
         android:theme="@style/TemanyaTiara">
         <activity android:name="com.example.todolistmvp.modul.add.AddActivity"></activity>
         <activity android:name="com.example.todolistmvp.modul.todolist.ToDoListActivity"></activity>
-        <activity android:name="com.example.todolistmvp.modul.login.ShowLoginActivity"></activity>
+        <activity android:name="com.example.todolistmvp.modul.profilelogin.ProfileLoginActivity"></activity>
         <activity android:name="com.example.todolistmvp.modul.login.LoginActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>

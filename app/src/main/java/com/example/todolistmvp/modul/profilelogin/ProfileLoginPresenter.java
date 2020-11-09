@@ -1,11 +1,11 @@
-package com.example.todolistmvp.modul.login;
+package com.example.todolistmvp.modul.profilelogin;
 
 import android.os.Bundle;
 
-public class ShowLoginPresenter implements ShowLoginContract.Presenter {
-    private final ShowLoginContract.View view;
+public class ProfileLoginPresenter implements ProfileLoginContract.Presenter {
+    private final ProfileLoginContract.View view;
 
-    public ShowLoginPresenter(ShowLoginContract.View view) {
+    public ProfileLoginPresenter(ProfileLoginContract.View view) {
         this.view = view;
     }
 
@@ -22,10 +22,5 @@ public class ShowLoginPresenter implements ShowLoginContract.Presenter {
     @Override
     public void performToDoList() {
         view.redirectToToDoList();
-    }
-
-    @Override
-    public void performLogout(){
-        view.redirectToLogin();
     }
 }

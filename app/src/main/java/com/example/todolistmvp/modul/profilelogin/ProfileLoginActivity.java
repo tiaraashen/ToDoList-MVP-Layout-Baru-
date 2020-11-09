@@ -1,12 +1,12 @@
-package com.example.todolistmvp.modul.login;
+package com.example.todolistmvp.modul.profilelogin;
 
 import android.os.Bundle;
 import android.view.View;
 
 import com.example.todolistmvp.base.BaseFragmentHolderActivity;
 
-public class ShowLoginActivity extends BaseFragmentHolderActivity {
-    ShowLoginFragment profileFragment;
+public class ProfileLoginActivity extends BaseFragmentHolderActivity {
+    ProfileLoginFragment profileLoginFragment;
     private final int UPDATE_REQUEST = 2019;
 
     @Override
@@ -18,7 +18,7 @@ public class ShowLoginActivity extends BaseFragmentHolderActivity {
         ivIcon.setVisibility(View.VISIBLE);
 
         Bundle bundle = getIntent().getExtras();
-        profileFragment = new ShowLoginFragment(bundle);
-        setCurrentFragment(profileFragment, false);
+        profileLoginFragment = new ProfileLoginFragment(bundle);
+        setCurrentFragment(profileLoginFragment, false);
     }
 }
