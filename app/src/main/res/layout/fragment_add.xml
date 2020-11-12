@@ -1,10 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
     android:orientation="vertical"
-    android:layout_margin="12dp">
+    android:layout_margin="12dp" >
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -20,7 +19,7 @@
             android:text="ADD DATA"
             android:textStyle="bold"
             android:textAppearance="@style/TextAppearance.AppCompat.Display1"
-            android:textColor="?attr/colorButtonNormal" />
+            android:textColor="?attr/colorPrimary" />
 
         <TextView
             android:id="@+id/tv_todoTitle"
@@ -29,28 +28,50 @@
             android:textStyle="bold"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:textColor="?attr/colorAccent"
+            android:textColor="?attr/tabBackgroundColor"
             android:text="To Do" />
 
         <EditText
-            android:id="@+id/newData"
+            android:id="@+id/newTitle"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginTop="7dp"
             android:layout_marginLeft="7dp"
             android:layout_marginRight="7dp"
-            android:textColor="?attr/colorPrimary"
-            android:hint="Enter an item here"
-            android:inputType="text" />
+            android:hint="@string/enter_title"
+            android:inputType="text"
+            android:textColor="?attr/textTabColor" />
+
+        <TextView
+            android:id="@+id/tv_descriptionTitle"
+            android:paddingTop="10dip"
+            android:paddingLeft="10dip"
+            android:textStyle="bold"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="?attr/tabBackgroundColor"
+            android:text="Description" />
+
+        <EditText
+            android:id="@+id/newDescription"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/newTitle"
+            android:layout_marginTop="7dp"
+            android:layout_marginLeft="7dp"
+            android:layout_marginRight="7dp"
+            android:hint="@string/enter_description"
+            android:inputType="text"
+            android:textColor="?attr/textTabColor" />
 
         <Button
             android:id="@+id/btnAdd"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_below="@id/newData"
+            android:layout_below="@id/newDescription"
             android:layout_marginTop="10dp"
             android:textColor="?attr/textWhiteColor"
-            android:background="?attr/colorButtonNormal"
-            android:text="Insert" />
+            android:background="?attr/colorPrimary"
+            android:text="@string/add_item" />
     </LinearLayout>
-
 </RelativeLayout>

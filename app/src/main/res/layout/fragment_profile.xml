@@ -1,10 +1,9 @@
-<RelativeLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:layout_margin="12dp">
+    android:layout_margin="12dp" >
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -20,56 +19,54 @@
             android:text="PROFILE"
             android:textStyle="bold"
             android:textAppearance="@style/TextAppearance.AppCompat.Display1"
-            android:textColor="?attr/colorButtonNormal" />
+            android:textColor="?attr/colorPrimary" />
 
         <TextView
             android:id="@+id/tv_emailTitle"
+            android:paddingTop="10dip"
+            android:paddingLeft="10dip"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:paddingLeft="10dip"
-            android:paddingTop="10dip"
+            android:textColor="?attr/tabBackgroundColor"
             android:textStyle="bold"
-            android:text="E-Mail"
-            android:textColor="?attr/colorAccent" />
+            android:text="@string/email" />
 
         <TextView
             android:id="@+id/tv_email"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:padding="10dip"
-            android:text="Your e-mail"
-            android:textColor="?attr/colorPrimary"
-            android:textSize="18sp" />
+            android:textSize="18sp"
+            android:textColor="?attr/textTabColor"
+            android:text="TextView" />
 
         <TextView
             android:id="@+id/tv_passwordTitle"
+            android:paddingTop="10dip"
+            android:paddingLeft="10dip"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:paddingLeft="10dip"
-            android:paddingTop="10dip"
+            android:textColor="?attr/tabBackgroundColor"
             android:textStyle="bold"
-            android:text="Password"
-            android:textColor="?attr/colorAccent" />
+            android:text="@string/password" />
 
         <TextView
             android:id="@+id/tv_password"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:padding="10dip"
-            android:text="Your password"
-            android:textColor="?attr/colorPrimary"
-            android:textSize="18sp" />
+            android:textSize="18sp"
+            android:textColor="?attr/textTabColor"
+            android:text="TextView" />
 
         <Button
             android:id="@+id/bt_todo"
+            android:layout_marginTop="10dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
-            android:background="?attr/colorButtonNormal"
-            android:text="To Do List"
-            android:textColor="?attr/textWhiteColor" />
-
-
+            android:textColor="?attr/textWhiteColor"
+            android:background="?attr/colorPrimary"
+            android:text="@string/to_do_list" />
     </LinearLayout>
 
 </RelativeLayout>

@@ -1,11 +1,11 @@
-package com.example.todolistmvp.modul.profilelogin;
+package com.example.todolistmvp.modul.profile;
 
 import android.os.Bundle;
 
 import com.example.todolistmvp.base.BasePresenter;
 import com.example.todolistmvp.base.BaseView;
 
-public interface ProfileLoginContract {
+public interface ProfileContract {
     interface View extends BaseView<Presenter> {
         void showUser(String email, String password);
         void redirectToToDoList();

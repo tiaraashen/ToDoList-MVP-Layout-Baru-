@@ -1,10 +1,11 @@
-package com.example.todolistmvp.modul.todolist;
+package com.example.todolistmvp.modul.todo;
 
+import com.example.todolistmvp.data.model.Task;
 
-public class ToDoListPresenter implements ToDoListContract.Presenter {
-    private final ToDoListContract.View view;
+public class ToDoPresenter implements ToDoContract.Presenter {
+    private final ToDoContract.View view;
 
-    public ToDoListPresenter(ToDoListContract.View view) {
+    public ToDoPresenter(ToDoContract.View view) {
         this.view = view;
     }
 
@@ -22,12 +23,12 @@ public class ToDoListPresenter implements ToDoListContract.Presenter {
     }
 
     @Override
-    public void editList(String uneditedItem, int index) {
-        view.showEditBox(uneditedItem, index);
+    public void editList(final Task uneditedItem) {
+        view.showEditBox(uneditedItem);
     }
 
     @Override
-    public void deleteItem(int position) {
+    public void deleteItem(final int position) {
         view.showDeleteDialog(position);
     }
 

@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/828863005/ToDoListMVP.iml" filepath="$PROJECT_DIR$/.idea/modules/828863005/ToDoListMVP.iml" group="ToDoListMVP" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/683256710/ToDoListMVP.iml" filepath="$PROJECT_DIR$/.idea/modules/683256710/ToDoListMVP.iml" group="ToDoListMVP" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/app.iml" filepath="$PROJECT_DIR$/.idea/modules/app.iml" group="ToDoListMVP/app" />
     </modules>
   </component>

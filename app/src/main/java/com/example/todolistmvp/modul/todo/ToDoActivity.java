@@ -1,11 +1,11 @@
-package com.example.todolistmvp.modul.login;
+package com.example.todolistmvp.modul.todo;
 
 import android.view.View;
 
 import com.example.todolistmvp.base.BaseFragmentHolderActivity;
 
-public class LoginActivity extends BaseFragmentHolderActivity {
-    protected LoginFragment loginFragment;
+public class ToDoActivity extends BaseFragmentHolderActivity {
+    protected ToDoFragment toDoFragment;
     private final int UPDATE_REQUEST = 2019;
 
     @Override
@@ -16,7 +16,7 @@ public class LoginActivity extends BaseFragmentHolderActivity {
         btOptionMenu.setVisibility(View.GONE);
         ivIcon.setVisibility(View.VISIBLE);
 
-        loginFragment = new LoginFragment();
-        setCurrentFragment(loginFragment, false);
+        toDoFragment = new ToDoFragment();
+        setCurrentFragment(toDoFragment, true);
     }
 }

@@ -1,3 +1,13 @@
 <resources>
     <string name="app_name">TO DO LIST</string>
+    <string name="enter_title">Enter title here</string>
+    <string name="enter_description">Enter description here</string>
+    <string name="add_item">Add Item</string>
+    <string name="email">Email</string>
+    <string name="password">Password</string>
+    <string name="to_do_list">To Do List</string>
+    <string name="log_out">Log Out</string>
+    <string name="log_in">Log In</string>
+    <string name="add">Add</string>
+    <string name="clear">Clear</string>
 </resources>

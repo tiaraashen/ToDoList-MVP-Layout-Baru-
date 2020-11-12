@@ -3,21 +3,21 @@ package com.example.todolistmvp.data.model;
 import com.example.todolistmvp.base.BaseModel;
 
 public class Task extends BaseModel {
-    private String id;
+    private int id;
     private String title;
     private String description;
 
-    public Task(String id, String title, String description) {
+    public Task(int id, String title, String description) {
         this.id = id;
         this.title = title;
         this.description = description;
     }
 
-    public String getId() {
+    public int getId() {
         return id;
     }
 
-    public void setId(String id) {
+    public void setId(int id) {
         this.id = id;
     }
 

@@ -1,6 +1,5 @@
 package com.example.todolistmvp.modul.add;
 
-
 public class AddPresenter implements AddContract.Presenter {
     private final AddContract.View view;
 

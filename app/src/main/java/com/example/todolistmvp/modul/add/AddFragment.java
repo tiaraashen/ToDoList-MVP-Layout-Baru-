@@ -12,17 +12,21 @@ import androidx.annotation.Nullable;
 
 import com.example.todolistmvp.R;
 import com.example.todolistmvp.base.BaseFragment;
-import com.example.todolistmvp.modul.todolist.ToDoListActivity;
+import com.example.todolistmvp.data.model.Task;
+import com.example.todolistmvp.modul.todo.ToDoActivity;
+import com.example.todolistmvp.utils.Database;
 
 import java.util.ArrayList;
 
 public class AddFragment extends BaseFragment<AddActivity, AddContract.Presenter> implements AddContract.View {
-    EditText newData;
-    Button btnAdd;
-    ArrayList<String> toDoList;
+    private EditText newTitle;
+    private EditText newDescription;
+    private Button btnAdd;
+    private ArrayList<Task> taskList;
+    private Database database;
 
-    public AddFragment(ArrayList<String> toDoList) {
-        this.toDoList = toDoList;
+    public AddFragment() {
+        this.database = Database.getInstance();
     }
 
     @Nullable
@@ -33,8 +37,10 @@ public class AddFragment extends BaseFragment<AddActivity, AddContract.Presenter
         mPresenter = new AddPresenter(this);
         mPresenter.start();
 
+        taskList = database.getTasks();
+        newTitle = fragmentView.findViewById(R.id.newTitle);
+        newDescription = fragmentView.findViewById(R.id.newDescription);
         btnAdd = fragmentView.findViewById(R.id.btnAdd);
-        newData = fragmentView.findViewById(R.id.newData);
 
         btnAdd.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -43,7 +49,7 @@ public class AddFragment extends BaseFragment<AddActivity, AddContract.Presenter
             }
         });
 
-        setTitle("Add To Do List");
+        setTitle("ADD ITEM");
 
         return fragmentView;
     }
@@ -55,11 +61,10 @@ public class AddFragment extends BaseFragment<AddActivity, AddContract.Presenter
 
     @Override
     public void addItem() {
-        if(newData.getText() != null)
-            toDoList.add(newData.getText().toString());
+        if(newTitle.getText() != null && newDescription.getText() != null)
+            database.addTask(newTitle.getText().toString(), newDescription.getText().toString());
 
-        Intent returnIntent = new Intent(activity, ToDoListActivity.class);
-        returnIntent.putStringArrayListExtra("returnData", toDoList);
+        Intent returnIntent = new Intent(activity, ToDoActivity.class);
         startActivity(returnIntent);
         activity.finish();
     }

@@ -2,7 +2,7 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical" android:layout_width="wrap_content"
     android:layout_height="wrap_content"
-    android:layout_margin="10dp">
+    android:layout_margin="30dp">
 
     <TextView
         android:id="@+id/textMessage"
@@ -13,10 +13,12 @@
         android:textSize="21sp" />
 
     <LinearLayout
-        android:layout_width="392dp"
+        android:layout_width="350dp"
         android:layout_height="wrap_content"
+        android:orientation="vertical"
         android:layout_gravity="center_horizontal"
-        android:orientation="vertical">
+        android:gravity="center"
+        android:textStyle="bold">
 
         <TextView
             android:id="@+id/tv_todoTitle"
@@ -25,26 +27,62 @@
             android:textStyle="bold"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:textColor="?attr/colorAccent"
+            android:textColor="?attr/tabBackgroundColor"
             android:text="  To Do" />
 
         <EditText
-            android:id="@+id/textInput"
-            android:layout_width="375dp"
+            android:id="@+id/titleEdit"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_margin="10dp"
-            android:layout_weight="10"
-            android:textColor="?attr/colorPrimary" />
+            android:layout_weight="2"
+            android:layout_margin="5dp"
+            android:textColor="?attr/textTabColor"/>
 
-        <Button
-            android:id="@+id/btnEdit"
-            android:layout_width="371dp"
+        <TextView
+            android:id="@+id/tv_descriptionTitle"
+            android:paddingTop="10dip"
+            android:paddingLeft="10dip"
+            android:textStyle="bold"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_margin="15dp"
-            android:layout_weight="1"
-            android:background="?attr/colorButtonNormal"
-            android:text="Fetch Data"
-            android:textColor="?attr/textWhiteColor" />
+            android:textColor="?attr/tabBackgroundColor"
+            android:text="  Description" />
+
+        <EditText
+            android:id="@+id/descriptionEdit"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="2"
+            android:layout_margin="5dp"
+            android:textColor="?attr/textTabColor"/>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_gravity="center_horizontal"
+            android:gravity="center" >
+
+            <Button
+                android:id="@+id/btnEdit"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="?attr/textWhiteColor"
+                android:background="?attr/colorPrimary"
+                android:text="Edit"
+                android:layout_weight="1"
+                android:layout_margin="10dp" />
+
+            <Button
+                android:id="@+id/btnDelete"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="?attr/textWhiteColor"
+                android:background="?attr/colorPrimary"
+                android:text="Delete"
+                android:layout_weight="1"
+                android:layout_margin="10dp" />
+
+        </LinearLayout>
     </LinearLayout>
-
 </LinearLayout>

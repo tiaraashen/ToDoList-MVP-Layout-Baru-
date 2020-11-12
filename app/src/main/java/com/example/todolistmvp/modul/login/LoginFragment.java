@@ -12,17 +12,16 @@ import androidx.annotation.Nullable;
 
 import com.example.todolistmvp.R;
 import com.example.todolistmvp.base.BaseFragment;
-import com.example.todolistmvp.modul.profilelogin.ProfileLoginActivity;
+import com.example.todolistmvp.modul.profile.ProfileActivity;
 
 public class LoginFragment extends BaseFragment<LoginActivity, LoginContract.Presenter> implements LoginContract.View {
-    EditText etEmail;
-    EditText etPassword;
-    Button btnLogin;
-    String email;
-    String password;
+    private EditText etEmail;
+    private EditText etPassword;
+    private Button btnLogin;
+    private String email;
+    private String password;
 
-    public LoginFragment() {
-    }
+    public LoginFragment() {}
 
     @Nullable
     @Override
@@ -42,7 +41,7 @@ public class LoginFragment extends BaseFragment<LoginActivity, LoginContract.Pre
             }
         });
 
-        setTitle("Log In");
+        setTitle("LOG IN");
 
         return fragmentView;
     }
@@ -60,7 +59,7 @@ public class LoginFragment extends BaseFragment<LoginActivity, LoginContract.Pre
 
     @Override
     public void redirectToProfile() {
-        Intent intent = new Intent(activity, ProfileLoginActivity.class);
+        Intent intent = new Intent(activity, ProfileActivity.class);
         intent.putExtra("email", email);
         intent.putExtra("password", password);
         startActivity(intent);

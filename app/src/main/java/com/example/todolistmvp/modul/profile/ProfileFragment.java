@@ -1,4 +1,4 @@
-package com.example.todolistmvp.modul.profilelogin;
+package com.example.todolistmvp.modul.profile;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -13,16 +13,16 @@ import androidx.annotation.Nullable;
 import com.example.todolistmvp.R;
 import com.example.todolistmvp.base.BaseFragment;
 import com.example.todolistmvp.modul.login.LoginActivity;
-import com.example.todolistmvp.modul.todolist.ToDoListActivity;
+import com.example.todolistmvp.modul.todo.ToDoActivity;
 
-public class ProfileLoginFragment extends BaseFragment<ProfileLoginActivity, ProfileLoginContract.Presenter> implements ProfileLoginContract.View {
-    TextView tvEmail;
-    TextView tvPassword;
-    Button btnToDo;
-    Button btnLogout;
-    Bundle bundle;
+public class ProfileFragment extends BaseFragment<ProfileActivity, ProfileContract.Presenter> implements ProfileContract.View {
+    private TextView tvEmail;
+    private TextView tvPassword;
+    private Button btnToDo;
+    private Button btnLogout;
+    private Bundle bundle;
 
-    public ProfileLoginFragment(Bundle bundle) {
+    public ProfileFragment(Bundle bundle) {
         this.bundle = bundle;
     }
 
@@ -31,7 +31,7 @@ public class ProfileLoginFragment extends BaseFragment<ProfileLoginActivity, Pro
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         super.onCreateView(inflater, container, savedInstanceState);
         fragmentView = inflater.inflate(R.layout.fragment_profile, container, false);
-        mPresenter = new ProfileLoginPresenter(this);
+        mPresenter = new ProfilePresenter(this);
         mPresenter.start();
 
         tvEmail = fragmentView.findViewById(R.id.tv_email);
@@ -47,7 +47,7 @@ public class ProfileLoginFragment extends BaseFragment<ProfileLoginActivity, Pro
             }
         });
 
-        setTitle("Profile Login");
+        setTitle("PROFILE");
 
         return fragmentView;
     }
@@ -56,8 +56,9 @@ public class ProfileLoginFragment extends BaseFragment<ProfileLoginActivity, Pro
         mPresenter.performToDoList();
     }
 
+
     @Override
-    public void setPresenter(ProfileLoginContract.Presenter presenter) {
+    public void setPresenter(ProfileContract.Presenter presenter) {
         mPresenter = presenter;
     }
 
@@ -69,7 +70,7 @@ public class ProfileLoginFragment extends BaseFragment<ProfileLoginActivity, Pro
 
     @Override
     public void redirectToToDoList() {
-        Intent intent = new Intent(activity, ToDoListActivity.class);
+        Intent intent = new Intent(activity, ToDoActivity.class);
         startActivity(intent);
         activity.finish();
     }

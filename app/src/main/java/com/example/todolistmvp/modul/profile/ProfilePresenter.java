@@ -1,11 +1,11 @@
-package com.example.todolistmvp.modul.profilelogin;
+package com.example.todolistmvp.modul.profile;
 
 import android.os.Bundle;
 
-public class ProfileLoginPresenter implements ProfileLoginContract.Presenter {
-    private final ProfileLoginContract.View view;
+public class ProfilePresenter implements ProfileContract.Presenter {
+    private final ProfileContract.View view;
 
-    public ProfileLoginPresenter(ProfileLoginContract.View view) {
+    public ProfilePresenter(ProfileContract.View view) {
         this.view = view;
     }
 

@@ -1,4 +1,4 @@
-package com.example.todolistmvp.modul.todolist;
+package com.example.todolistmvp.modul.todo;
 
 import android.app.AlertDialog;
 import android.app.Dialog;
@@ -9,35 +9,36 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.AdapterView;
-import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.ListView;
 import android.widget.TextView;
 
 import androidx.annotation.Nullable;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.todolistmvp.R;
 import com.example.todolistmvp.base.BaseFragment;
+import com.example.todolistmvp.data.model.Task;
 import com.example.todolistmvp.modul.add.AddActivity;
 import com.example.todolistmvp.modul.login.LoginActivity;
+import com.example.todolistmvp.utils.Database;
+import com.example.todolistmvp.utils.RecyclerViewAdapterTodolist;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 
-public class ToDoListFragment extends BaseFragment<ToDoListActivity, ToDoListContract.Presenter> implements ToDoListContract.View {
-    ListView itemListView;
-    Button btnAdd;
-    Button btnClear;
-    Button btnLogout;
-    String[] toDoArray = {"Tidur", "Makan", "Rebahan", "Ngebucin"};
-    ArrayList<String> toDoArrayList;
-    ArrayList<String> returnedList;
-    ArrayAdapter adapter;
+public class ToDoFragment extends BaseFragment<ToDoActivity, ToDoContract.Presenter> implements ToDoContract.View {
+    private Button btnAdd;
+    private Button btnClear;
+    private Button btnLogout;
+    private RecyclerView mRecyclerView;
+    private RecyclerView.Adapter mAdapter;
+    private RecyclerView.LayoutManager mLayoutManager;
+    private Database database;
+    private ArrayList<Task> taskList;
 
-    public ToDoListFragment(ArrayList<String> returnedList) {
-        this.returnedList = returnedList;
+    public ToDoFragment() {
+        this.database = Database.getInstance();
     }
 
     @Nullable
@@ -45,21 +46,28 @@ public class ToDoListFragment extends BaseFragment<ToDoListActivity, ToDoListCon
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         super.onCreateView(inflater, container, savedInstanceState);
         fragmentView = inflater.inflate(R.layout.fragment_todolist, container, false);
-        mPresenter = new ToDoListPresenter(this);
+        mPresenter = new ToDoPresenter(this);
         mPresenter.start();
 
-        itemListView = fragmentView.findViewById(R.id.itemListView);
+        mRecyclerView = fragmentView.findViewById(R.id.recyclerViewTodolist);
+        mRecyclerView.setHasFixedSize(true);
+        mLayoutManager = new LinearLayoutManager(activity);
+        mRecyclerView.setLayoutManager(mLayoutManager);
+
         btnAdd = fragmentView.findViewById(R.id.btnAdd);
         btnClear = fragmentView.findViewById(R.id.btnClear);
         btnLogout = fragmentView.findViewById(R.id.btnLogout);
 
-        if (returnedList == null)
-            toDoArrayList = new ArrayList<>(Arrays.asList(toDoArray));
-        else
-            toDoArrayList = returnedList;
+        taskList = database.getTasks();
+        mAdapter = new RecyclerViewAdapterTodolist(taskList);
+        mRecyclerView.setAdapter(mAdapter);
 
-        adapter = new ArrayAdapter<>(activity, android.R.layout.simple_list_item_1, toDoArrayList);
-        itemListView.setAdapter(adapter);
+        ((RecyclerViewAdapterTodolist) mAdapter).setOnItemClickListener(new RecyclerViewAdapterTodolist.MyClickListener() {
+            @Override
+            public void onItemClick(int position, View v) {
+                mPresenter.editList(taskList.get(position));
+            }
+        });
 
         btnAdd.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -75,21 +83,6 @@ public class ToDoListFragment extends BaseFragment<ToDoListActivity, ToDoListCon
             }
         });
 
-        itemListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-            @Override
-            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                mPresenter.editList(toDoArrayList.get(position), position);
-            }
-        });
-
-        itemListView.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener() {
-            @Override
-            public boolean onItemLongClick(AdapterView<?> parent, View view, int position, long id) {
-                mPresenter.deleteItem(position);
-                return true;
-            }
-        });
-
         btnLogout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -97,55 +90,66 @@ public class ToDoListFragment extends BaseFragment<ToDoListActivity, ToDoListCon
             }
         });
 
-        setTitle("To Do List");
+        setTitle("TO DO LIST");
 
         return fragmentView;
     }
 
     @Override
-    public void setPresenter(ToDoListContract.Presenter presenter) {
+    public void setPresenter(ToDoContract.Presenter presenter) {
         mPresenter = presenter;
     }
 
     @Override
     public void redirectToAdd() {
         Intent intent = new Intent(activity, AddActivity.class);
-        intent.putStringArrayListExtra("todo", toDoArrayList);
         startActivity(intent);
     }
 
     @Override
     public void emptyList() {
-        toDoArrayList.clear();
-        adapter.notifyDataSetChanged();
+        database.deleteAll();
+        mAdapter.notifyDataSetChanged();
     }
 
     @Override
-    public void showEditBox(String uneditedItem, final int index) {
+    public void showEditBox(final Task uneditedItem) {
         final Dialog dialog = new Dialog(activity);
         dialog.setTitle("EDIT DIALOG");
         dialog.setContentView(R.layout.dialog_edit);
 
         TextView txtMessage = (TextView) dialog.findViewById(R.id.textMessage);
-        txtMessage.setText("EDIT ITEM");
+        txtMessage.setText("ITEM DETAIL");
         txtMessage.setTextColor(Color.parseColor("#000000"));
 
-        final EditText editText = (EditText) dialog.findViewById(R.id.textInput);
-        editText.setText(uneditedItem);
-        Button bt = (Button) dialog.findViewById(R.id.btnEdit);
-        bt.setOnClickListener(new View.OnClickListener() {
+        final EditText titleEdit = (EditText) dialog.findViewById(R.id.titleEdit);
+        final EditText descriptionEdit = (EditText) dialog.findViewById(R.id.descriptionEdit);
+        titleEdit.setText(uneditedItem.getTitle());
+        descriptionEdit.setText(uneditedItem.getDescription());
+        Button btnEdit = (Button) dialog.findViewById(R.id.btnEdit);
+        btnEdit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                toDoArrayList.set(index, editText.getText().toString());
-                adapter.notifyDataSetChanged();
+                database.editTask(uneditedItem.getId(), titleEdit.getText().toString(), descriptionEdit.getText().toString());
+                mAdapter.notifyDataSetChanged();
                 dialog.dismiss();
             }
         });
+
+        Button btnDelete = (Button) dialog.findViewById(R.id.btnDelete);
+        btnDelete.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                dialog.dismiss();
+                mPresenter.deleteItem(uneditedItem.getId());
+            }
+        });
+
         dialog.show();
     }
 
     @Override
-    public void showDeleteDialog(int position) {
+    public void showDeleteDialog(final int position) {
         final int index = position;
 
         new AlertDialog.Builder(activity)
@@ -156,8 +160,8 @@ public class ToDoListFragment extends BaseFragment<ToDoListActivity, ToDoListCon
                 .setPositiveButton("Yes", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialogInterface, int i) {
-                        toDoArrayList.remove(index);
-                        adapter.notifyDataSetChanged();
+                        database.deleteTask(index);
+                        mAdapter.notifyDataSetChanged();
                     }
                 })
                 .show();
