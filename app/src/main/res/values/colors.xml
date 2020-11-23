@@ -13,31 +13,6 @@
     <color name="myLayoutColor">#0054a7</color>
     <color name="myTransparent">#cfe7ff</color>
 
-    <!--Palette Two-->
-    <color name="pantoneDark331c">#017787</color>
-    <color name="pantoneOne">#01B0C8</color><!--3DAEBD-->
-    <color name="pantoneTwo">#30CBE1</color>
-    <color name="pantoneTree">#5BD4E5</color>
-    <color name="pantoneTransparent">#6605c3de</color>
-    <color name="pantoneDarkTransparent">#8c017787</color>
-    <color name="pantone331c">#05c3de</color>
-
-    <!--Palette Three-->
-    <color name="light_blue_50">#E1F5FE</color>
-    <color name="light_blue_100">#B3E5FC</color>
-    <color name="light_blue_200">#81D4FA</color>
-    <color name="light_blue_300">#4FC3F7</color>
-    <color name="light_blue_400">#29B6F6</color>
-    <color name="light_blue_500">#03A9F4</color>
-    <color name="light_blue_600">#039BE5</color>
-    <color name="light_blue_700">#0288D1</color>
-    <color name="light_blue_800">#0277BD</color>
-    <color name="light_blue_900">#01579B</color>
-    <color name="light_blue_A100">#80D8FF</color>
-    <color name="light_blue_A200">#40C4FF</color>
-    <color name="light_blue_A400">#00B0FF</color>
-    <color name="light_blue_A700">#0091EA</color>
-
     <!--Palettenya Tiara-->
     <color name="pinkOne">#ec007f</color>
     <color name="pinkTwo">#8a004a</color>

@@ -19,17 +19,6 @@
         <item name="detailBackground">@color/myTransparent</item>
     </style>
 
-    <style name="SecondTheme" parent="Theme.AppCompat.Light.NoActionBar">
-        <item name="colorPrimary">@color/pantone331c</item>
-        <item name="colorPrimaryDark">@color/pantoneDark331c</item>
-        <item name="tabBackgroundColor">@color/pantone331c</item>
-        <item name="toolbarBackgroundColor">@color/pantone331c</item>
-        <item name="textDarkColor">@color/pantoneDark331c</item>
-        <item name="textWhiteColor">@color/myTextLight</item>
-        <item name="detailBackground">@color/myLayoutColor</item>
-        <item name="imageTransparentOverlay">@color/pantoneTransparent</item>
-    </style>
-
     <style name="TemaTiara" parent="Theme.AppCompat.Light.NoActionBar">
         <item name="colorPrimaryDark">@color/pinkOne</item>
         <item name="colorButtonNormal">@color/pinkTwo</item>

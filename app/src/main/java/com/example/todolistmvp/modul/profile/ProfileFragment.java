@@ -56,6 +56,9 @@ public class ProfileFragment extends BaseFragment<ProfileActivity, ProfileContra
         mPresenter.performToDoList();
     }
 
+    public void setBtLogoutClick(){
+        mPresenter.performLogout();
+    }
 
     @Override
     public void setPresenter(ProfileContract.Presenter presenter) {
@@ -71,6 +74,13 @@ public class ProfileFragment extends BaseFragment<ProfileActivity, ProfileContra
     @Override
     public void redirectToToDoList() {
         Intent intent = new Intent(activity, ToDoActivity.class);
+        startActivity(intent);
+        activity.finish();
+    }
+
+    @Override
+    public void redirectToLogin() {
+        Intent intent = new Intent(activity, LoginActivity.class);
         startActivity(intent);
         activity.finish();
     }

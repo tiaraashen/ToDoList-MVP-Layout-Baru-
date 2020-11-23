@@ -3,7 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:layout_margin="12dp" >
+    android:layout_margin="12dp">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -38,6 +38,7 @@
             android:layout_marginLeft="7dip"
             android:layout_marginRight="7dip"
             android:ems="10"
+            android:textStyle="bold"
             android:textColor="?attr/textTabColor"
             android:inputType="textEmailAddress" />
 

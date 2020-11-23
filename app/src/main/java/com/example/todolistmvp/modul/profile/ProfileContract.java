@@ -9,10 +9,12 @@ public interface ProfileContract {
     interface View extends BaseView<Presenter> {
         void showUser(String email, String password);
         void redirectToToDoList();
+        void redirectToLogin();
     }
 
     interface Presenter extends BasePresenter {
         void getUserInfo(Bundle bundle);
         void performToDoList();
+        void performLogout();
     }
 }

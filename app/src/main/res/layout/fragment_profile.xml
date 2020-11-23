@@ -3,7 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:layout_margin="12dp" >
+    android:layout_margin="12dp">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -11,7 +11,7 @@
         android:orientation="vertical">
 
         <TextView
-            android:id="@+id/tv_login_title"
+            android:id="@+id/tv_profilr_title"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="16dp"
@@ -67,6 +67,7 @@
             android:textColor="?attr/textWhiteColor"
             android:background="?attr/colorPrimary"
             android:text="@string/to_do_list" />
+
     </LinearLayout>
 
 </RelativeLayout>

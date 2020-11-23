@@ -23,4 +23,9 @@ public class ProfilePresenter implements ProfileContract.Presenter {
     public void performToDoList() {
         view.redirectToToDoList();
     }
+
+    @Override
+    public void performLogout(){
+        view.redirectToLogin();
+    }
 }
