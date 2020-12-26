@@ -1,4 +1,5 @@
 <resources>
+
     <!-- Base application theme. -->
     <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
         <!-- Customize your theme here. -->
@@ -8,23 +9,41 @@
     </style>
 
     <!-- My Theme -->
-    <style name="TemaBaruTiara" parent="Theme.AppCompat.Light.NoActionBar">
+    <style name="MyTheme" parent="Theme.AppCompat.Light.NoActionBar">
         <item name="colorPrimary">@color/myPrimary</item>
         <item name="colorPrimaryDark">@color/myPrimaryDark</item>
-        <item name="tabBackgroundColor">@color/myLightBackground</item>
-        <item name="toolbarBackgroundColor">@color/myLayoutColor</item>
+        <item name="tabBackgroundColor">@color/myPrimaryDark</item>
+        <item name="toolbarBackgroundColor">@color/myPrimaryDark</item>
         <item name="textDarkColor">@color/myPrimaryDark</item>
         <item name="textTabColor">@color/myText</item>
         <item name="textWhiteColor">@color/myTextLight</item>
-        <item name="detailBackground">@color/myTransparent</item>
+        <item name="detailBackground">@color/myLayoutColor</item>
     </style>
 
-    <style name="TemaTiara" parent="Theme.AppCompat.Light.NoActionBar">
-        <item name="colorPrimaryDark">@color/pinkOne</item>
-        <item name="colorButtonNormal">@color/pinkTwo</item>
-        <item name="colorPrimary">@color/pinkThree</item>
-        <item name="toolbarBackgroundColor">@color/pinkFour</item>
-        <item name="tabBackgroundColor">@color/pinkFive</item>
-        <item name="colorAccent">@color/pinkSix</item>
+    <style name="SecondTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="colorPrimary">@color/pantone331c</item>
+        <item name="colorPrimaryDark">@color/pantoneDark331c</item>
+        <item name="tabBackgroundColor">@color/pantone331c</item>
+        <item name="toolbarBackgroundColor">@color/pantone331c</item>
+        <item name="textDarkColor">@color/pantoneDark331c</item>
+        <item name="textTabColor">@color/pantoneDark331c</item>
+        <item name="textWhiteColor">@color/myTextLight</item>
+        <item name="detailBackground">@color/myLayoutColor</item>
+        <item name="imageTransparentOverlay">@color/pantoneTransparent</item>
     </style>
+
+    <style name="AzureTheme"  parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="colorPrimary">@color/azurePrimary</item>
+        <item name="colorPrimaryDark">@color/azurePrimaryDark</item>
+        <item name="tabBackgroundColor">@color/azureMajor</item>
+        <item name="toolbarBackgroundColor">@color/azureMinor</item>
+        <item name="colorPrimarySurface">@color/azureMajorSurface</item>
+        <item name="textDarkColor">@color/azureRaven</item>
+        <item name="textTabColor">@color/azureRaven</item>
+        <item name="textWhiteColor">@color/azureLight</item>
+        <item name="detailBackground">@color/azureAccent</item>
+        <item name="imageTransparentOverlay">@color/azureSoft</item>
+        <item name="textAppearanceHeadline1">@color/azureSecondary</item>
+    </style>
+
 </resources>

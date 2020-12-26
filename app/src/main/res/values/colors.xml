@@ -4,20 +4,46 @@
     <color name="colorPrimaryDark">#3700B3</color>
     <color name="colorAccent">#03DAC5</color>
 
-    <!--Palette Barunya Tiara-->
-    <color name="myPrimary">#0d2e6c</color>
-    <color name="myPrimaryDark">#00003d</color>
-    <color name="myText">#286980</color>
+    <!--My Color-->
+    <color name="myPrimary">#128C7E</color>
+    <color name="myPrimaryDark">#075e54</color>
+    <color name="myText">#41a290</color>
     <color name="myTextLight">#FFFFFF</color>
-    <color name="myLightBackground">#54acc9</color>
-    <color name="myLayoutColor">#0054a7</color>
-    <color name="myTransparent">#cfe7ff</color>
+    <color name="myLightBackground">#a7e6d7</color>
+    <color name="myTransparent">#8c128C7E</color>
+    <color name="myLayoutColor">#EEEEEE</color>
 
-    <!--Palettenya Tiara-->
-    <color name="pinkOne">#ec007f</color>
-    <color name="pinkTwo">#8a004a</color>
-    <color name="pinkThree">#940094</color>
-    <color name="pinkFour">#ffacba</color>
-    <color name="pinkFive">#ffd3db</color>
-    <color name="pinkSix">#ff5f79</color>
+    <!--pallete one-->
+    <color name="pantoneDark331c">#017787</color>
+    <color name="pantoneOne">#01B0C8</color><!--3DAEBD-->
+    <color name="pantoneTwo">#30CBE1</color>
+    <color name="pantoneTree">#5BD4E5</color>
+    <color name="pantoneTransparent">#6605c3de</color>
+    <color name="pantoneDarkTransparent">#8c017787</color>
+    <color name="pantone331c">#05c3de</color>
+
+    <!--Azure color pallette-->
+    <color name="azureMajor">#3399ff</color>
+    <color name="azureMinor">#77BBFF</color>
+    <color name="azureMajorSurface">#EB4E9EED</color>
+    <color name="azureAccent">#FFD799</color>
+    <color name="azurePrimary">#000050</color>
+    <color name="azurePrimaryDark">#002d7f</color>
+    <color name="azureRaven">#F30A1D40</color>
+    <color name="azureSecondary">#ffa500</color>
+    <color name="azureSoft">#c6e2ff</color>
+    <color name="azureWhiteSky">#F1FFFF</color>
+    <color name="azureLight">#E9F1FFFF</color>
+
+    <!--  Addition color  -->
+    <color name="lowGreen">#DDBFFFB3</color>
+    <color name="calmGreen">#F7A7F74C</color>
+    <color name="success">#37B83C</color>
+    <color name="darkSuccess">#199368</color>
+    <color name="secondaryTextBtn">#AFAFAF</color>
+    <color name="bloodColor">#F5D80911</color>
+    <color name="brightRed">#DAFF0008</color>
+    <color name="textSecondary">#F2888888</color>
+    <color name="bgApp">#A3E1F0E7</color>
+
 </resources>
