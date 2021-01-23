@@ -32,18 +32,23 @@
         <item name="imageTransparentOverlay">@color/pantoneTransparent</item>
     </style>
 
-    <style name="AzureTheme"  parent="Theme.AppCompat.Light.NoActionBar">
-        <item name="colorPrimary">@color/azurePrimary</item>
-        <item name="colorPrimaryDark">@color/azurePrimaryDark</item>
-        <item name="tabBackgroundColor">@color/azureMajor</item>
-        <item name="toolbarBackgroundColor">@color/azureMinor</item>
-        <item name="colorPrimarySurface">@color/azureMajorSurface</item>
-        <item name="textDarkColor">@color/azureRaven</item>
-        <item name="textTabColor">@color/azureRaven</item>
-        <item name="textWhiteColor">@color/azureLight</item>
-        <item name="detailBackground">@color/azureAccent</item>
-        <item name="imageTransparentOverlay">@color/azureSoft</item>
-        <item name="textAppearanceHeadline1">@color/azureSecondary</item>
+    <style name="TiaraTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="textDarkColor">@color/darkTurquoise</item>
+        <item name="textTabColor">@color/darkTurquoise</item>
+        <item name="colorSecondary">@color/mediumTurquoise</item>
+        <item name="colorAccent">@color/paleTurquoise</item>
+        <item name="textWhiteColor">@color/myTextLight</item>
+        <item name="detailBackground">@color/myLayoutColor</item>
+        <item name="android:textViewStyle">@style/RobotoTextViewStyle</item>
+        <item name="android:buttonStyle">@style/RobotoButtonStyle</item>
+    </style>
+
+    <style name="RobotoTextViewStyle" parent="android:Widget.TextView">
+        <item name="android:fontFamily">sans-serif-light</item>
+    </style>
+
+    <style name="RobotoButtonStyle" parent="android:Widget.Holo.Button">
+        <item name="android:fontFamily">sans-serif-light</item>
     </style>
 
 </resources>

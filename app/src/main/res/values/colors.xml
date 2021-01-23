@@ -4,6 +4,7 @@
     <color name="colorPrimaryDark">#3700B3</color>
     <color name="colorAccent">#03DAC5</color>
 
+
     <!--My Color-->
     <color name="myPrimary">#128C7E</color>
     <color name="myPrimaryDark">#075e54</color>
@@ -22,28 +23,11 @@
     <color name="pantoneDarkTransparent">#8c017787</color>
     <color name="pantone331c">#05c3de</color>
 
-    <!--Azure color pallette-->
-    <color name="azureMajor">#3399ff</color>
-    <color name="azureMinor">#77BBFF</color>
-    <color name="azureMajorSurface">#EB4E9EED</color>
-    <color name="azureAccent">#FFD799</color>
-    <color name="azurePrimary">#000050</color>
-    <color name="azurePrimaryDark">#002d7f</color>
-    <color name="azureRaven">#F30A1D40</color>
-    <color name="azureSecondary">#ffa500</color>
-    <color name="azureSoft">#c6e2ff</color>
-    <color name="azureWhiteSky">#F1FFFF</color>
-    <color name="azureLight">#E9F1FFFF</color>
+    <!--pallete Tiara-->
+    <color name="colorInputText">#F2F2F2</color>
+    <color name="darkTurquoise">#005A5B</color>
+    <color name="mediumTurquoise">#69D1AC</color>
+    <color name="paleTurquoise">#96C6C6</color>
 
-    <!--  Addition color  -->
-    <color name="lowGreen">#DDBFFFB3</color>
-    <color name="calmGreen">#F7A7F74C</color>
-    <color name="success">#37B83C</color>
-    <color name="darkSuccess">#199368</color>
-    <color name="secondaryTextBtn">#AFAFAF</color>
-    <color name="bloodColor">#F5D80911</color>
-    <color name="brightRed">#DAFF0008</color>
-    <color name="textSecondary">#F2888888</color>
-    <color name="bgApp">#A3E1F0E7</color>
 
 </resources>

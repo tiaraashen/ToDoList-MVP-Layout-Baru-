@@ -1,0 +1,102 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/background">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:gravity="center"
+        android:padding="20dp">
+
+        <ProgressBar
+            android:id="@+id/progress_bar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentEnd="true"
+            android:layout_marginTop="50dp"
+            android:visibility="gone"/>
+
+        <TextView
+            android:id="@+id/loginTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Sign Up"
+            android:textColor="@color/paleTurquoise"
+            android:textSize="48sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/loginSubTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Let's create a new account!"
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="50dp"
+            android:textColor="@color/paleTurquoise"
+            android:textSize="16sp"
+            android:textStyle="bold"/>
+
+        <EditText
+            android:id="@+id/et_name"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/rounded_edit_text"
+            android:drawableStart="@drawable/username"
+            android:hint="Name"
+            android:inputType="text"
+            android:textSize="8pt" />
+
+        <EditText
+            android:id="@+id/et_email"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginTop="10dp"
+            android:inputType="textPersonName"
+            android:drawableStart="@drawable/email"
+            android:hint="Email"
+            android:textSize="8pt"
+            android:background="@drawable/rounded_edit_text"
+            />
+
+        <EditText
+            android:id="@+id/et_password"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="50dp"
+            android:hint="Password"
+            android:drawableStart="@drawable/password"
+            android:textSize="8pt"
+            android:inputType="textPassword"
+            android:background="@drawable/rounded_edit_text"/>
+
+        <Button
+            android:id="@+id/bt_login"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="?attr/textDarkColor"
+            android:background="@drawable/rounded_button"
+            android:text="Sign Up"
+            android:textStyle="bold"
+            android:textSize="10pt"
+            />
+        <Button
+            android:id="@+id/bt_back"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:textColor="?attr/textDarkColor"
+            android:background="@drawable/rounded_button"
+            android:text="Back"
+            android:textStyle="bold"
+            android:textSize="10pt"
+            />
+    </LinearLayout>
+</RelativeLayout>

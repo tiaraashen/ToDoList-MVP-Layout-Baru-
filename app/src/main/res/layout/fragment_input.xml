@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bg_task"
+    android:padding="20dp"
+    android:orientation="vertical">
+
+    <ProgressBar
+        android:id="@+id/progress_bar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="5dp"
+        android:visibility="gone"/>
+
+    <TextView
+        android:id="@+id/inputItem"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="110dp"
+        android:layout_marginStart="75dp"
+        android:text="Your Task"
+        android:textColor="@color/darkTurquoise"
+        android:textSize="48sp"
+        android:textStyle="bold" />
+
+    <EditText
+        android:id="@+id/inputTitle"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginTop="250dp"
+        android:layout_marginBottom="20dp"
+        android:drawableStart="@drawable/title_icon"
+        android:background="@drawable/rounded_edit_text"
+        android:hint="Title"
+        android:inputType="textPersonName" />
+
+    <EditText
+        android:id="@+id/inputDescription"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:minHeight="50dp"
+        android:layout_below="@+id/inputTitle"
+        android:drawableStart="@drawable/description_icon"
+        android:background="@drawable/rounded_edit_text"
+        android:layout_marginBottom="50dp"
+        android:hint="Description"
+        android:inputType="textPersonName" />
+
+    <Button
+        android:id="@+id/btnInput"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        android:layout_below="@+id/inputDescription"
+        android:textColor="@color/paleTurquoise"
+        android:background="@drawable/rounded_button_dark"
+        android:text="ADD"
+        android:textStyle="bold"
+        android:textSize="10pt"/>
+
+</RelativeLayout>
